@@ -72,7 +72,7 @@ ul li a:hover{
 }
 
 .info span{
-    color: rgb(230,104,59);
+    color: rgb(153, 35, 137);
 }
 .info a{
     text-decoration: none;
@@ -91,10 +91,10 @@ ul li a:hover{
 
 .image-container{
     position: absolute;
-    top: -1; /* Place at top of container */
-    right: 0rem; /* Place at right side of container */
-    width: 25rem; /* Adjust width as needed */
-    height: 25rem;
+    top: -8; /* Place at top of container */
+    right: 20rem; /* Place at right side of container */
+    width: 35rem; /* Adjust width as needed */
+    height: 20rem;
 }
 
 .image-container img{
