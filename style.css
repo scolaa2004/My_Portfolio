@@ -101,3 +101,35 @@ ul li a:hover{
     width: min(25rem, 90%);
     border-radius: 100%;
 }
+/* Base styles for larger screens */
+body {
+    font-size: 18px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Styles for small screens (phones, less than or equal to 576px) */
+@media (max-width: 576px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    /* Example of stacking items vertically for small screens */
+    .header, .content, .footer {
+        width: 100%;
+    }
+
+    /* Adjusting image sizes and layout for small screens */
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
