@@ -44,11 +44,12 @@ ul li{
 }
 
 ul li a{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
-    color: darkslategray;
+    color: rgb(17, 2, 151);
     margin-top: -3%;
+    
 }
 
 ul li a:hover{
@@ -91,15 +92,17 @@ ul li a:hover{
 
 .image-container{
     position: absolute;
-    top: -8; /* Place at top of container */
-    right: 20rem; /* Place at right side of container */
+    top: 38rem; /* Place at top of container */
+    right: 10rem; /* Place at right side of container */
     width: 35rem; /* Adjust width as needed */
-    height: 40rem;
+    height: 50rem;
+    
 }
 
 .image-container img{
     width: min(25rem, 90%);
     border-radius: 100%;
+    height: min(25rem, 90%);
 }
 /* Base styles for larger screens */
 body {
@@ -133,3 +136,128 @@ body {
     }
 }
 
+/* Social icons (contact page) - right aligned, consistent sizing and hover effects */
+.info a.social-link{
+    display: block; /* make the anchor a block so the image can sit alone */
+    background: none; /* override any page-local anchor background */
+    padding: 0; /* remove padding around the image */
+    width: auto;
+    text-align: right; /* ensure content inside anchor is right aligned */
+}
+
+.info a.social-link img{
+    display: block;
+    max-width: 90px; /* limit size */
+    margin: 8px 0 18px auto; /* push the image to the right */
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.info a.social-link img:hover{
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+}
+
+@media (max-width: 576px) {
+    .info a.social-link img{
+        max-width: 64px;
+        margin: 6px 0 12px auto;
+    }
+}
+
+/* Projects layout: posters (portrait cards) and banners (wide cards) */
+
+    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        main.projects {
+            max-width: 1200px;   /* limit content width */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        header hr {
+            width: 80px;
+            margin: 10px auto 30px auto;
+            border: 2px solid #333;
+        }
+
+        section.project-section {
+            margin-bottom: 50px;
+        }
+
+        section.project-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        /* Grid layout for projects */
+        .projects-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+
+        /* Individual project styling */
+        .project {
+            display: block;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        /* Poster images */
+        .project-thumb {
+            width: 100%;          /* image fills container width */
+            max-height: 200px;    /* limits height to prevent huge images */
+            object-fit: cover;    /* crops image nicely */
+            display: block;
+        }
+
+        .project-content {
+            padding: 15px;
+        }
+
+        .project-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .project-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Optional: adjust banners differently */
+        .project-banner .project-content {
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    
