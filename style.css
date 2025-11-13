@@ -1,263 +1,589 @@
-*{
+/* ============================================================================
+   RESPONSIVE PORTFOLIO STYLESHEET
+   Mobile-first approach with breakpoints for tablet, laptop, and desktop
+   Breakpoints: 576px (phone→tablet), 900px (tablet→laptop), 1200px (laptop→desktop)
+   ============================================================================ */
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.main{
-    width: 100%;
-    background: url(image3.avif);
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    position: relative;
+
+html, body {
     font-family: sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
-.navbar{
-    width: 86%;
-    display: flex;
-    margin: auto;
-    padding: 15px 0;
-    align-items: center;
-    justify-content: flex-end;
+body {
+    background-color: #f9f9f9;
+    font-size: 16px;
+    padding: 0;
 }
 
-.navbar .logo a{
+/* ============================================================================
+   HERO SECTION (index.html .main)
+   ============================================================================ */
+.main {
+    width: 100%;
+    background: url(image3.avif) center/cover no-repeat;
+    min-height: 100vh;
     position: relative;
-   font-size: 4.5rem;
-   font-weight: 600;
-   color: #000;
-   transition: 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
-.navbar .logo a:hover{
-    color:palevioletred;
+/* Navbar */
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    gap: 8px;
 }
 
-ul{
-    margin-top: 1%;
+.navbar .logo a {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-ul li{
+.navbar .logo a:hover {
+    color: palevioletred;
+}
+
+/* Navigation List */
+ul {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    display: inline-block;
-    padding: 10px 16px;
+    gap: 4px;
+    margin-top: 0;
 }
 
-ul li a{
-    font-size: 18px;
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    display: block;
+    padding: 8px 12px;
+    font-size: 14px;
     font-weight: bold;
     text-decoration: none;
     color: rgb(17, 2, 151);
-    margin-top: -3%;
-    
+    transition: color 0.3s;
 }
 
-ul li a:hover{
-    color:rgb(230,104,59);
+ul li a:hover {
+    color: rgb(230, 104, 59);
 }
 
-.info{
-    margin-left: 7%;
-    margin-top: 6%;
+/* Info Section (Hero Text) */
+.info {
+    padding: 16px;
+    margin-top: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.info h1{
-    font-size: 65px;
+.info h1 {
+    font-size: 2rem;
     color: black;
+    margin: 8px 0;
+    line-height: 1.2;
 }
 
-.info h3{
-    font-size:18px;
-    letter-spacing: 1px;
-    line-height: 24px;
+.info h3 {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    margin: 8px 0;
 }
 
-.info span{
+.info span {
     color: rgb(153, 35, 137);
 }
-.info a{
+
+.info a {
+    align-self: flex-start;
     text-decoration: none;
     color: #fff;
-    background: rgb(36,32,30);
-    margin: 26px 0;
+    background: rgb(36, 32, 30);
+    margin: 16px 0;
     padding: 10px 18px;
     border-radius: 10px;
     display: inline-block;
-    transition: .4s ease;
+    transition: background 0.4s;
 }
 
-.info a:hover{
-    background: rgb(59,174,209);
+.info a:hover {
+    background: rgb(59, 174, 209);
 }
 
-.image-container{
-    position: absolute;
-    top: 38rem; /* Place at top of container */
-    right: 10rem; /* Place at right side of container */
-    width: 35rem; /* Adjust width as needed */
-    height: 50rem;
-    
+/* Image Container */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin: 16px auto;
+    padding: 0 16px;
 }
 
-.image-container img{
-    width: min(25rem, 90%);
-    border-radius: 100%;
-    height: min(25rem, 90%);
+.image-container img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-/* Base styles for larger screens */
-body {
-    font-size: 18px;
-    padding: 20px;
+
+/* ============================================================================
+   PROJECTS PAGE LAYOUT
+   ============================================================================ */
+
+.projects {
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
-    max-width: 1200px;
+    padding: 20px 16px;
 }
 
-/* Styles for small screens (phones, less than or equal to 576px) */
-@media (max-width: 576px) {
+.projects header h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.projects header hr {
+    width: 60px;
+    margin: 8px auto 24px;
+    border: 2px solid #333;
+}
+
+.project-section {
+    margin-bottom: 32px;
+}
+
+.project-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+}
+
+/* Grid: Posters (Social Icon Size) */
+.projects-grid.posters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.project {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.18s, box-shadow 0.18s;
+    min-height: 48px;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-poster {
+    aspect-ratio: 3 / 4;
+    position: relative;
+    padding: 2px;
+    max-height: 56px;
+    width: 48px;
+}
+
+.project-poster .project-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.22s;
+}
+
+.project:hover .project-thumb {
+    transform: scale(1.05);
+}
+
+/* Tooltip on hover for posters */
+.project-poster .project-content {
+    display: none;
+}
+
+.project:hover .project-content {
+    display: block;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.75rem;
+}
+
+.project-poster .project-content h3 {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.project-poster .project-content p {
+    display: none;
+}
+
+/* Grid: Banners (Wide Cards) */
+.projects-grid.banners {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.project-banner {
+    aspect-ratio: 6 / 1;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: linear-gradient(90deg, #fef3c7 0%, #fff7ed 100%);
+    min-height: 44px;
+}
+
+.project-banner .project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-banner .project-content h3 {
+    font-size: 1rem;
+    margin: 0 0 4px 0;
+    font-weight: bold;
+}
+
+.project-banner .project-content p {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0;
+}
+
+/* ============================================================================
+   CONTACT PAGE / SOCIAL ICONS
+   ============================================================================ */
+
+.info a.social-link {
+    display: block;
+    background: none;
+    padding: 0;
+    width: auto;
+    text-align: right;
+    margin: 8px 0;
+}
+
+.info a.social-link img {
+    display: inline-block;
+    max-width: 80px;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.info a.social-link img:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================================
+   TABLET BREAKPOINT (576px and up)
+   ============================================================================ */
+@media (min-width: 576px) {
     body {
         font-size: 16px;
-        padding: 10px;
-    }
-
-    .container {
-        flex-direction: column;
         padding: 0;
     }
 
-    /* Example of stacking items vertically for small screens */
-    .header, .content, .footer {
-        width: 100%;
+    .navbar {
+        padding: 15px 20px;
+        gap: 12px;
     }
 
-    /* Adjusting image sizes and layout for small screens */
-    img {
-        width: 100%;
-        height: auto;
+    .navbar .logo a {
+        font-size: 2.5rem;
+    }
+
+    ul li a {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+
+    .info {
+        padding: 24px;
+        margin-top: 12px;
+    }
+
+    .info h1 {
+        font-size: 2.5rem;
+    }
+
+    .info h3 {
+        font-size: 15px;
+    }
+
+    .image-container {
+        max-width: 300px;
+    }
+
+    .image-container img {
+        max-width: 240px;
+    }
+
+    /* Projects: Posters in 2 columns */
+    .projects-grid.posters {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 12px;
+    }
+
+    .project-poster {
+        max-height: 72px;
+        width: 60px;
+    }
+
+    /* Banners: wider */
+    .project-banner {
+        aspect-ratio: 8 / 1;
+        padding: 12px 16px;
+        min-height: 50px;
+    }
+
+    .project-banner .project-content h3 {
+        font-size: 1.1rem;
     }
 }
 
-/* Social icons (contact page) - right aligned, consistent sizing and hover effects */
-.info a.social-link{
-    display: block; /* make the anchor a block so the image can sit alone */
-    background: none; /* override any page-local anchor background */
-    padding: 0; /* remove padding around the image */
-    width: auto;
-    text-align: right; /* ensure content inside anchor is right aligned */
-}
+/* ============================================================================
+   LAPTOP BREAKPOINT (900px and up)
+   ============================================================================ */
+@media (min-width: 900px) {
+    body {
+        font-size: 18px;
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
 
-.info a.social-link img{
-    display: block;
-    max-width: 90px; /* limit size */
-    margin: 8px 0 18px auto; /* push the image to the right */
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transition: transform .18s ease, box-shadow .18s ease;
-}
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: center;
+        padding: 0 24px;
+    }
 
-.info a.social-link img:hover{
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.22);
-}
+    .navbar {
+        grid-column: 1 / -1;
+        padding: 20px 0;
+        justify-content: space-between;
+    }
 
-@media (max-width: 576px) {
-    .info a.social-link img{
-        max-width: 64px;
-        margin: 6px 0 12px auto;
+    .navbar .logo a {
+        font-size: 3rem;
+    }
+
+    ul li a {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+
+    .info {
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .info h1 {
+        font-size: 3rem;
+    }
+
+    .info h3 {
+        font-size: 18px;
+    }
+
+    .image-container {
+        max-width: 350px;
+        margin: 0;
+    }
+
+    .image-container img {
+        max-width: 300px;
+    }
+
+    .projects {
+        max-width: 1200px;
+        padding: 40px 24px;
+    }
+
+    .projects header h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-section h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Projects: 4+ columns */
+    .projects-grid.posters {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 16px;
+    }
+
+    .project-poster {
+        max-height: 100px;
+        width: 80px;
+    }
+
+    .project-banner {
+        aspect-ratio: 10 / 1;
+        padding: 16px 20px;
+        min-height: 60px;
+    }
+
+    .project-banner .project-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .info a.social-link img {
+        max-width: 90px;
     }
 }
 
-/* Projects layout: posters (portrait cards) and banners (wide cards) */
+/* ============================================================================
+   DESKTOP BREAKPOINT (1200px and up)
+   ============================================================================ */
+@media (min-width: 1200px) {
+    body {
+        max-width: 1400px;
+    }
 
-    
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
+    .main {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 32px;
+        padding: 0 32px;
+    }
 
-        main.projects {
-            max-width: 1200px;   /* limit content width */
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .navbar .logo a {
+        font-size: 3.5rem;
+    }
 
-        header h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
+    ul li a {
+        font-size: 17px;
+        padding: 10px 18px;
+    }
 
-        header hr {
-            width: 80px;
-            margin: 10px auto 30px auto;
-            border: 2px solid #333;
-        }
+    .info h1 {
+        font-size: 3.5rem;
+    }
 
-        section.project-section {
-            margin-bottom: 50px;
-        }
+    .info h3 {
+        font-size: 19px;
+    }
 
-        section.project-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-        }
+    .image-container {
+        max-width: 400px;
+    }
 
-        /* Grid layout for projects */
-        .projects-grid {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        }
+    .image-container img {
+        max-width: 350px;
+    }
 
-        /* Individual project styling */
-        .project {
-            display: block;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+    .projects {
+        max-width: 1400px;
+        padding: 60px 40px;
+    }
 
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
+    .projects header h1 {
+        font-size: 3rem;
+    }
 
-        /* Poster images */
-        .project-thumb {
-            width: 100%;          /* image fills container width */
-            max-height: 200px;    /* limits height to prevent huge images */
-            object-fit: cover;    /* crops image nicely */
-            display: block;
-        }
+    .project-section h2 {
+        font-size: 2rem;
+    }
 
-        .project-content {
-            padding: 15px;
-        }
+    /* Projects: 5-6 columns */
+    .projects-grid.posters {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+    }
 
-        .project-content h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
-        }
+    .project-poster {
+        max-height: 120px;
+        width: 100px;
+    }
 
-        .project-content p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #555;
-        }
+    .project-banner {
+        aspect-ratio: 12 / 1;
+        padding: 20px 24px;
+        min-height: 70px;
+    }
 
-        /* Optional: adjust banners differently */
-        .project-banner .project-content {
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    
+    .project-banner .project-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .info a.social-link img {
+        max-width: 100px;
+    }
+}
+
+/* ============================================================================
+   UTILITY & GENERAL
+   ============================================================================ */
+
+/* Remove horizontal scrollbar on mobile */
+body, html {
+    overflow-x: hidden;
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .navbar, .image-container {
+        display: none;
+    }
+}
